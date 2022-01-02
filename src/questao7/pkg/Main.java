@@ -50,14 +50,15 @@ public class Main {
     
     public static boolean login () throws ParseException{
         
-   //formatar a data, pegando apenas as horas e minuto    
-  // Horas(0-23) : minutos (https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+   //formatar a data, pegando apenas as horas e minutos, usando o SimpeDateFormat    
+  // "HH:mm" = (Horas(0-23) : minutos)
    
   SimpleDateFormat sdf = new SimpleDateFormat("HH:mm"); 
 
                                                           
   
-   //declaração dos horários, para realizar a comparação
+   //declaração dos horários, para realizar a comparação, usando a formatação definida no
+   //SimpeDateFormat, que foi chamado sdf.
    
    Date inicioManha = sdf.parse("06:00");
    Date fimManha = sdf.parse ("11:59");
@@ -72,6 +73,7 @@ public class Main {
    Date fimMadrugada = sdf.parse ("05:59");
         
    // new Date retorna o tempo atual, format retorna em STRING, parse em DATE usando a formatação definida no SimpleDateFormat.
+   // horaAtual então esta pegando o horario atual em HH:mm, no formato Date em que podemos comparar com os horários definidos anteriormente.
    
    String stringHoraATual = sdf.format(new Date());
    Date horaAtual = sdf.parse(stringHoraATual);  
@@ -95,7 +97,9 @@ public class Main {
     
     
     
-    //comparando os dados digitados com os armazenados no Array, e testando as condições dos horários
+    // comparando os dados digitados com os armazenados no Array, e testando as condições dos horários
+    // se o id e senha digitados forem iguais aos do de algum User armazendo no Array, o login é realizado, e a mensagem exibida
+    // em seguida vai depender do horário atual  da máquina.
     
     for (int i =0; i < users.size();i++){
        
