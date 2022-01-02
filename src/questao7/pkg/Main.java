@@ -21,7 +21,7 @@ public class Main {
         
         
         
-        // adicionando Users no array para realizar testes
+        // adicionando Users no array para realizar testes, passando id e senha(ID, senha)
         
         User userTeste = new User("teste","12345");
         User lucas = new User("lucas","54321");
@@ -34,7 +34,7 @@ public class Main {
            
         
       
-        //se logar, retorna true e o programa fecha, se retorna false, pede os dados para tentar novamente. 
+        //se logar, retorna true e o programa fecha, se id/senhas estiverem errados retorna false e pede os dados para tentar novamente. 
        
         while (!login()) {
            
@@ -71,7 +71,7 @@ public class Main {
    Date inicioMadrugada = sdf.parse ("00:00");
    Date fimMadrugada = sdf.parse ("05:59");
         
-   // new Date retorna o tempo atual, format retorna em STRING, parse em DATE, usando a formatação definida no SimpleDateFormat.
+   // new Date retorna o tempo atual, format retorna em STRING, parse em DATE usando a formatação definida no SimpleDateFormat.
    
    String stringHoraATual = sdf.format(new Date());
    Date horaAtual = sdf.parse(stringHoraATual);  
