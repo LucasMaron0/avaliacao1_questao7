@@ -17,6 +17,18 @@ public class User {
         this.id = id;
         this.senha = senha;
     }
+    
+    // método para testar se id e senha digitados são compatíveis 
+    // com os do User
+    
+    public boolean autenticar(String id, String senha){
+        if(id.equals(this.id)
+        &&(senha.equals(this.senha))){
+            
+            return true;
+        }
+            return false;
+    }
 
     public String getId() {
         return id;
